@@ -25,6 +25,7 @@ export default function Home() {
   const handleMouse = (event: React.MouseEvent) => setCoordinates(event);
   const handleTouch = (event: React.TouchEvent) => {
     event.preventDefault();
+    event.stopPropagation();
     setCoordinates(event.changedTouches[0]);
   }
 

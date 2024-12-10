@@ -23,7 +23,10 @@ export default function Home() {
     }
   };
   const handleMouse = (event: React.MouseEvent) => setCoordinates(event);
-  const handleTouch = (event: React.TouchEvent) => setCoordinates(event.changedTouches[0]);
+  const handleTouch = (event: React.TouchEvent) => {
+    event.preventDefault();
+    setCoordinates(event.changedTouches[0]);
+  }
 
   return <main className="container mx-auto">
     <p>({p[0]}, {p[1]})</p>
